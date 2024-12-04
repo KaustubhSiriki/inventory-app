@@ -1,6 +1,6 @@
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { TrendingUp } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -12,6 +12,27 @@ import {
 } from "recharts";
 
 const CardSalesSummary = () => {
+
+  const [containerHeight, setContainerHeight] = useState(240);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerHeight > 650) {
+        setContainerHeight(350);
+      } else if (window.innerHeight > 300) {
+        setContainerHeight(240);
+      } else {
+        setContainerHeight(120);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }
+  , []);
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
   const salesData = data?.salesSummary || [];
 
@@ -86,7 +107,7 @@ const CardSalesSummary = () => {
               </select>
             </div>
             {/* CHART */}
-            <ResponsiveContainer width="100%" height={350} className="px-7">
+            <ResponsiveContainer width="100%" height={containerHeight} className="px-7">
               <BarChart
                 data={salesData}
                 margin={{ top: 0, right: 0, left: -25, bottom: 0 }}

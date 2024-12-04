@@ -50,7 +50,7 @@ import {
         ) : (
           <>
             <div>
-              <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
+              <h2 className="text-md 2xl:text-xl font-semibold mb-2 px-7 pt-5">
                 Expense Summary
               </h2>
               <hr />
@@ -59,7 +59,7 @@ import {
             <div className="xl:flex justify-between pr-7">
               {/* CHART */}
               <div className="relative basis-3/5">
-                <ResponsiveContainer width="100%" height={140}>
+                <ResponsiveContainer width="100%" height={120}>
                   <PieChart>
                     <Pie
                       data={expenseCategories}
@@ -104,7 +104,7 @@ import {
             <div>
               <hr />
               {expenseSummary && (
-                <div className="mt-3 flex justify-between items-center px-7 mb-4">
+                <div className="2xl:mt-2 flex justify-between items-center px-7 mb-0 2xl:mb-2">
                   <div className="pt-2">
                     <p className="text-sm">
                       Average:{" "}

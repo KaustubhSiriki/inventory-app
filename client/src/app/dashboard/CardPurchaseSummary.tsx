@@ -34,10 +34,10 @@ const CardPurchaseSummary = () => {
           {/* BODY */}
           <div>
             {/* BODY HEADER */}
-            <div className="mb-4 mt-7 px-7">
+            <div className="mb-2 2xl:mb-4 mt-3 px-7">
               <p className="text-xs text-gray-400">Purchased</p>
               <div className="flex items-center">
-                <p className="text-2xl font-bold">
+                <p className="text-xl 2xl:text-2xl font-bold">
                   {lastDataPoint
                     ? numeral(lastDataPoint.totalPurchased).format("$0.00a")
                     : "0"}
@@ -61,7 +61,7 @@ const CardPurchaseSummary = () => {
               </div>
             </div>
             {/* CHART */}
-            <ResponsiveContainer width="100%" height={200} className="p-2">
+            <ResponsiveContainer width="100%" height={150} className="p-2">
               <AreaChart
                 data={purchaseData}
                 margin={{ top: 0, right: 0, left: -50, bottom: 45 }}

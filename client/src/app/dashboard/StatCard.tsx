@@ -30,7 +30,7 @@ const StatCard = ({
     value >= 0 ? "text-green-500" : "text-red-500";
 
   return (
-    <div className="md:row-span-1 xl:row-span-2 bg-white col-span-1 shadow-md rounded-2xl flex flex-col justify-between">
+    <div className="md:row-span-1 xl:row-span-2 bg-white col-span-1 shadow-md rounded-2xl flex flex-col justify-between xl:h-40">
       {/* HEADER */}
       <div>
         <div className="flex justify-between items-center mb-2 px-5 pt-4">
@@ -41,7 +41,7 @@ const StatCard = ({
       </div>
 
       {/* BODY */}
-      <div className="flex mb-6 items-center justify-around gap-4 px-5">
+      <div className="flex mb-2 items-center justify-around gap-4 px-5 xl:h-20">
         <div className="rounded-full p-5 bg-blue-50 border-sky-300 border-[1px]">
           {primaryIcon}
         </div>
