@@ -1,9 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* other config options here */
   eslint: {
     ignoreDuringBuilds: true,
+  }, images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "s3-inventory-app.s3.us-east-2.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
